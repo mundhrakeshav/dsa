@@ -2,9 +2,7 @@ package longestsubarraywithsumk
 
 // LongestSubArrayWithSumK: returns the length of the longest sub-array with sum k
 
-// [1,	1,	1,	2,	3,	2,	1, 	1, 	1, 	1, 1]
-
-func LongestSubArrayWithSumKHashMap(array []int64, k int64) struct{
+func LongestSubArrayWithSumKHashMap(array []int64, k int64) struct {
 	UpIdx, LowIdx int64
 } {
 	// Only Positives
@@ -23,9 +21,9 @@ func LongestSubArrayWithSumKHashMap(array []int64, k int64) struct{
 		rem := sum - k
 
 		if prev_index, found := sumToIndexMap[rem]; found {
-			if(idx - prev_index > upIdx - lowIdx) {
+			if idx-prev_index > upIdx-lowIdx {
 				upIdx = idx
-				lowIdx = prev_index
+				lowIdx = prev_index + 1
 			}
 		}
 
@@ -33,8 +31,44 @@ func LongestSubArrayWithSumKHashMap(array []int64, k int64) struct{
 			sumToIndexMap[sum] = idx
 		}
 	}
-	return struct{UpIdx int64; LowIdx int64}{
-		UpIdx: upIdx,
+	return struct {
+		UpIdx  int64
+		LowIdx int64
+	}{
+		UpIdx:  upIdx,
 		LowIdx: lowIdx,
+	}
+}
+
+func LongestSubArrayWithSumK2Pointer(array []int64, k int64) struct {
+	UpIdx, LowIdx int64
+} {
+	// Only Positives
+	left, right := int64(0), int64(0)
+	sum := array[0]
+	upIdx, downIdx := int64(0), int64(0)
+	n := int64(len(array))
+	for right < n {
+		for sum > k && left <= right {
+			sum -= array[left]
+			left++
+		}
+
+		if sum == k && upIdx-downIdx < right-left {
+			downIdx = left
+			upIdx = right
+		}
+		right++
+		if right < n {
+			sum += array[right]
+		}
+	}
+
+	return struct {
+		UpIdx  int64
+		LowIdx int64
+	}{
+		UpIdx:  upIdx,
+		LowIdx: downIdx,
 	}
 }
