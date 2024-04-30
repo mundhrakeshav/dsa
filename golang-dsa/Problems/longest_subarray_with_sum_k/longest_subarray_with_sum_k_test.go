@@ -21,7 +21,6 @@ import (
 // 	1
 // ]
 
-
 func TestLongestSubArrayWithSumK(t *testing.T) {
 	// arr := []int64{
 	// 	1, 1, 1, 2, 3, 2, 1, 1, 1, 1, 1,
