@@ -18,7 +18,6 @@ func GetProvincesCountIterative(arr [][]int) int {
 	for i := range arr {
 		if _, found := visited[i]; !found {
 			count++
-
 			cities := []int{i}
 			for len(cities) > 0 {
 				connectedCities := make([]int, 0)
