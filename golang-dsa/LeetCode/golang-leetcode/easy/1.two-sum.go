@@ -1,4 +1,4 @@
-package leetcode
+package leetcode_easy
 
 /*
  * @lc app=leetcode id=1 lang=golang
@@ -16,18 +16,17 @@ func twoSum(nums []int, target int) []int {
 		if diffIndex, found := record[diff]; found && i != diffIndex {
 			return []int{i, diffIndex}
 		}
-
-		/* 
+		/*
 			say corresponding element to v is x
-			The x isn't found in map right now so we save current element's 
+			The x isn't found in map right now so we save current element's
 			index. Further in iterations, x will be encountered so we as v_1
-			and v + v_1 == target. 
+			and v + v_1 == target.
 			Index of v then could be fetched from record
 		*/
 		record[v] = i
 	}
 
-	return []int{-1, -1}
+	return []int{-1}
 }
 
 // @lc code=end
