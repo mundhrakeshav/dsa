@@ -8,5 +8,5 @@ import (
 )
 
 func TestMaxSubArray(t *testing.T) {
-	fmt.Println(maxsubarray.MaxSubArray([]int{-2,-3,4,-1,-2,1,5,-3}))
+	fmt.Println(maxsubarray.MaxSubArray([]int{-2, -3, 4, -1, -2, 1, 5, -3}))
 }

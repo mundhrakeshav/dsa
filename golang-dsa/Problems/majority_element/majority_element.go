@@ -64,11 +64,11 @@ func MajorityElement3(arr []int) [2]int {
 	}
 
 	ret := [2]int{-1, -1}
-	if count1 > len(arr) / 3 {
+	if count1 > len(arr)/3 {
 		ret[0] = element1
 	}
-	
-	if count2 > len(arr) / 3 {
+
+	if count2 > len(arr)/3 {
 		ret[1] = element2
 	}
 

@@ -3,6 +3,7 @@ package binarysearch
 import (
 	"fmt"
 )
+
 func UpperBound(arr []int, x int) int {
 	fmt.Println(len(arr))
 	return upperBoundIter(arr, 0, len(arr)-1, x)

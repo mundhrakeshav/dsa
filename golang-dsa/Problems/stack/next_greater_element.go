@@ -9,9 +9,9 @@ func NGEs(arr []int) []int {
 	n := len(arr)
 	nge := make([]int, n)
 
-	for i := 2 * n - 1; i >= 0; i-- {
+	for i := 2*n - 1; i >= 0; i-- {
 
-		for !stk.Empty() && *stk.Peek() <= arr[i % n] {
+		for !stk.Empty() && *stk.Peek() <= arr[i%n] {
 			stk.Pop()
 		}
 
@@ -23,7 +23,7 @@ func NGEs(arr []int) []int {
 			}
 		}
 
-		stk.Push(arr[i % n])
+		stk.Push(arr[i%n])
 	}
 
 	return nge
