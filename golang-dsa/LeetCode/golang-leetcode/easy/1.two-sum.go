@@ -1,4 +1,4 @@
-package leetcode_easy
+package easy
 
 /*
  * @lc app=leetcode id=1 lang=golang

@@ -1,10 +1,10 @@
-package leetcode_medium_test
+package medium_test
 
 import (
 	"fmt"
 	"testing"
 
-	leetcode_medium "github.com/mundhrakeshav/DSA/golang-dsa/LeetCode/golang-leetcode/medium"
+	medium "github.com/mundhrakeshav/DSA/golang-dsa/LeetCode/golang-leetcode/medium"
 )
 
 func TestFourSum(t *testing.T) {
@@ -28,7 +28,7 @@ func TestFourSum(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run("Test", func(t *testing.T) {
-			fmt.Println(leetcode_medium.FourSum(test.input, test.target))
+			fmt.Println(medium.FourSum(test.input, test.target))
 		})
 	}
 }

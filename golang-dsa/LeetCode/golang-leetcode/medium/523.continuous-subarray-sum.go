@@ -1,4 +1,4 @@
-package leetcode_medium
+package medium
 
 import "slices"
 

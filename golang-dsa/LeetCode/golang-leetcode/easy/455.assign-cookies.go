@@ -1,4 +1,4 @@
-package leetcode_easy
+package easy
 
 import (
 	"sort"
